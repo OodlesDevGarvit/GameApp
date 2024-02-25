@@ -7,7 +7,7 @@ import PrimaryButton from "../components/ui/PrimaryButton";
 import Card from "../components/ui/Card";
 import InstructionsText from "../components/ui/InstructionsText";
 import GuessLogItem from "../components/game/GuessLogItem";
-
+import Icon from 'react-native-vector-icons/Feather';
 
 function generateRandomBetween(min, max, exclude) {
   const rndNum = Math.floor(Math.random() * (max - min)) + min;
@@ -84,10 +84,14 @@ const GameScreen = ({ userNumber, onGameOver }) => {
 
         <View style={styles.buttonsContainer} >
           <View style={styles.buttonContainer}>
-            <PrimaryButton onPress={nextGuessHandler.bind(this, 'lower')}>-</PrimaryButton>
+            <PrimaryButton onPress={nextGuessHandler.bind(this, 'lower')}>
+            <Icon name="minus" size={22} style={{ color: 'black' }} />
+            </PrimaryButton>
           </View>
           <View style={styles.buttonContainer}>
-            <PrimaryButton onPress={nextGuessHandler.bind(this, 'greater')}>+</PrimaryButton>
+            <PrimaryButton onPress={nextGuessHandler.bind(this, 'greater')}>
+           <Icon name="plus" size={22} style={{ color: 'black' }} />
+            </PrimaryButton>
           </View>
         </View>
 
@@ -109,6 +113,7 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     padding: 12,
+    alignItems:'center',
 
   },
   buttonsContainer: {
